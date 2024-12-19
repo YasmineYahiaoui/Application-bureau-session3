@@ -1,0 +1,114 @@
+﻿<Window x:Class="amira_kenza_yasmineUA2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="800"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+       
+    
+    <Grid Margin="0,0,0,-6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Dégradé dans la première ligne -->
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.998"/>
+                    <GradientStop Color="#6D87D2" Offset="0.3"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100">
+                <Ellipse Width="368" Height="235" Fill="#FF6D87D2" Opacity="0.3" Canvas.Left="332" Canvas.Top="114" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            </Canvas>
+            <TextBlock x:Name="Titre" Text="Bienvenue à La Bibliothèque De Gatineau" 
+                 Foreground="#FF0A2964" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Trebuchet MS" Height="62" Margin="0,70,0,64"/>
+        </Grid>
+
+        <!-- Image dans la première colonne de la deuxième ligne -->
+        <Image Grid.Row="1" Source="img\image.jpeg"
+               HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="160" Width="169"/>
+
+        <!-- StackPanel pour le contenu -->
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,175,0,0" Grid.RowSpan="2" Height="284" Width="291">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Nom d'utilisateur avec icône -->
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <Image Source="img/user.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                    <TextBox x:Name="NomUser" Margin="0,5,0,5" Width="250" FontFamily="Segoe UI" FontSize="14" Padding="5" BorderThickness="1" BorderBrush="#6D87D2" />
+                </StackPanel>
+
+                <!-- Mot de passe avec icône -->
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                    <Image Source="img/lock.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                    <PasswordBox x:Name="MotDePasse" Margin="0,5,0,5" Width="250" FontFamily="Segoe UI" FontSize="14" Padding="5" BorderThickness="1" BorderBrush="#6D87D2" />
+                </StackPanel>
+
+                <!-- Bouton Se connecter avec coins arrondis et ombre -->
+                <Button x:Name="Connecter" Grid.Row="2" Content="Se Connecter" 
+                        Width="150" Margin="74,10,0,17" Background="#2F316F" Foreground="#F0FFFF" 
+                        HorizontalAlignment="Left" Grid.Column="1" 
+                        FontFamily="Segoe UI" FontSize="14" Click="Connecter_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}" CornerRadius="20">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="3" Color="Black" />
+                    </Button.Effect>
+                </Button>
+            </Grid>
+
+            <!-- Label pour erreurs -->
+            <Label x:Name="erreur" Content="" Foreground="Red" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+
+            <!-- Vous n'avez pas de compte -->
+            <Label Content="    Vous n'avez pas de compte ?" FontSize="16" FontWeight="Bold" Margin="0,20,0,10" HorizontalAlignment="Center" FontFamily="Segoe UI" Width="241" Height="41"/>
+            <Button Content="Créer un compte" Width="150" Background="#2F316F" Foreground="#F0FFFF" FontFamily="Segoe UI" FontSize="14" Height="19" Click="Button_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="20">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="3" Color="Black" />
+                </Button.Effect>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

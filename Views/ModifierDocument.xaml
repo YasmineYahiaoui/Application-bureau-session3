@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="amira_kenza_yasmineUA2.ModifierDocument"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="10">
+        <StackPanel Margin="10">
+            <TextBlock Text="Modifier un Livre" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" Width="600" Foreground="#FFE9DDDD"/>
+
+            <TextBlock Text="ISBN" Foreground="#FFE9DDDD" FontWeight="Bold" Width="280"/>
+            <TextBox x:Name="ISBNTextBox" Width="200" Margin="0,0,0,10" IsEnabled="False"/>
+
+            <TextBlock Text="Titre" Foreground="#FFE9DDDD" FontWeight="Bold" Width="280"/>
+            <TextBox x:Name="TitreTextBox" Width="200" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Auteur" Foreground="#FFE9DDDD" FontWeight="Bold" Width="280"/>
+            <TextBox x:Name="AuteurTextBox" Width="200" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Année" Foreground="#FFE9DDDD" FontWeight="Bold" Width="280"/>
+            <TextBox x:Name="AnneeTextBox" Width="200" Margin="0,0,0,10"/>
+
+            <Button Content="Enregistrer les modifications" Width="200" Click="EnregistrerModifications_Click" Margin="0,10,0,0" Background="#FF2F316F" Foreground="Azure"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
